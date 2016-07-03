@@ -13,7 +13,7 @@ public:
     }
 
     /* 出队列，如果s2是空，就把s1的元素全部灌入到s2中，最后总是从s2中出队列 */
-    int dequeue(int x)
+    int dequeue()
     {
         if(s2.empty())
         {
