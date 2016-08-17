@@ -55,7 +55,7 @@ int helper_2(vector<int>& nums, int lo, int hi)
         }
         else
         {
-            return helper_2(nums, lo+1, hi-1);
+            return helper_2(nums, lo, hi-1);
         }
     }
 }
