@@ -21,3 +21,13 @@ ListNode *reverse_list(ListNode *head)
     }
     return prev;
 }
+
+ListNode *reverse_list_recursive(ListNode *head)
+{
+    if(head == NULL || head->next == NULL)
+        return head;
+    ListNode *new_head = reverse_list_recursive(head->next);
+    head->next->next = head;
+    head->next = NULL;
+    return new_head;
+}
