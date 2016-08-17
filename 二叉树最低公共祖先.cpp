@@ -41,10 +41,8 @@ TreeNode * lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q)
  */
 TreeNode * lowestCommonAncestor_2(TreeNode *root, TreeNode *p, TreeNode *q)
 {
-    if(root == NULL)
-        return NULL;
-    if(p == NULL || q == NULL)
-        return NULL;
+    if(root == NULL || root == p || root == q)
+        return root;
     TreeNode *left = lowestCommonAncestor_2(root->left, p, q); //向左边找最低公共祖先
     TreeNode *right = lowestCommonAncestor_2(root->right, p, q);//向右边找最低公共祖先
 
