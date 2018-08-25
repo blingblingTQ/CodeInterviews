@@ -22,6 +22,7 @@ private:
         subsets(result, nums, one_solution, index + 1); //不选
         one_solution.push_back(nums[index]);
         subsets(result, nums, one_solution, index + 1); //选
+        one_solution.pop_back();
         return;
     }
 };
