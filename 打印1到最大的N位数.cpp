@@ -24,17 +24,16 @@ void print_number(char *number)
 
 void print_1_to_max_of_n_digits_recurisively(char *number, int length, int index)
 {
-    if(index == length - 1)
+    if(index == length)
     {
         print_number(number);
         return;
     }
     for(int i = 0; i < 10; i++)
     {
-        number[index + 1] = i + '0';
+        number[index] = i + '0';
         print_1_to_max_of_n_digits_recurisively(number, length, index + 1);
     }
-    
 }
 
 void print_1_to_max_of_n_digits(int n)
@@ -43,12 +42,7 @@ void print_1_to_max_of_n_digits(int n)
         return;
     char *number = new char[n+1];
     number[n] = '\0';
-    
-    for(int i = 0; i < 10; i++)
-    {
-        number[0] = i + '0';
-        print_1_to_max_of_n_digits_recurisively(number, n, 0);
-    }
+    print_1_to_max_of_n_digits_recurisively(number, n, 0);
     delete[] number;
 }
 
